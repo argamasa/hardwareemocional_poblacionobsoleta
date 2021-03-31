@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!--
-
                   /'.    /|    .'\
            ,._   |+i\  /++\  / +|    ,,
            |*+'._/+++\/+ ++\/+++<_.-'+|
@@ -24,39 +22,39 @@ _,-'* +++ ++|  |++ +*/` /` +* +|  |\  \+ ++++++'-._
             /+*.-.*+ +_ ++*+ _+++ .-.* +\
              | /   | +/ `\?+/` \*+|    \ |
              '    \.'    |/    './     '
-
   2021 ~ Sebastián Mira ~ Hardware Emocional pt. 3
 -->	
-	
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="💿">
     <title>Población Obsoleta</title>
+    
     <link rel="shortcut icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femojigraph.org%2Fmedia%2Fwhatsapp%2Foptical-disk_1f4bf.png&f=1&nofb=1">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-    </head>
+</head>
 
 <body>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  
+    <a-scene loading-screen="dotsColor: red; backgroundColor: black" vr-mode-ui="enabled: false">
+        <a-entity id="rig" movement-controls kinematic-body position="2.192 0 2">
+            <a-entity id="camera" camera position="0 2 0" look-controls  cursor="rayOrigin: mouse"></a-entity>
+          </a-entity>
+        <a-assets>
+            <a-asset-item id="virus" src="./assets/virus.gltf"></a-asset-item>
 
-    
-<a-assets>
-    <a-asset-item id="virus" src="./assets/virus.gltf"></a-asset-item>
-</a-assets>
 
-    <a-scene loading-screen="enabled: false"; vr-mode-ui="enabled: false"; background="color: #fff">
-    <a-entity geometry="primitive: plane; width: 100; height: 100" rotation="-90 0 0" material="shader: flat; src: url(./assets/tapete.jpg); repeat: 100 100"></a-entity>
+        </a-assets>
+        <a-entity geometry="primitive: plane; width: 100; height: 100" rotation="-90 0 0" material="shader: flat; src: url(./assets/tapete.jpg); repeat: 100 100"></a-entity>
      
- <a-entity navigate-on-click="url: https://www.youtube.com/watch?v=HajECunjYjM"  gltf-model="#virus"  scale="0.03 0.03 0.03" position="-2.66 0.901 -2.087" rotation="-179.997 88.05 179.997" material="shader: flat" ></a-entity>
-   <a-box position="-2.66 0.4 -2.087" rotation="0 33 0" scale="0.15 1 0.15" material="shader: flat" color="#f2f2f2"></a-box>
-<!-- 	    <a-link href="https://www.youtube.com/watch?v=HajECunjYjM"
-                    position="-2.66 0.901 -2.087"
-                    link="visualAspectEnabled:false"
-                    >
- -->
-	    <script>
+
+        <a-entity navigate-on-click="url: https://www.youtube.com/watch?v=HajECunjYjM"  gltf-model="#virus"  scale="0.03 0.03 0.03" position="-2.66 0.901 -2.087" rotation="-179.997 88.05 179.997" material="shader: flat" ></a-entity>
+        <a-box position="-2.66 0.4 -2.087" rotation="0 33 0" scale="0.15 1 0.15" material="shader: flat" color="#f2f2f2"></a-box>
+
+
+<script>
   AFRAME.registerComponent('navigate-on-click', {
       schema: {
           url: { default: '' }
@@ -73,5 +71,7 @@ _,-'* +++ ++|  |++ +*/` /` +* +|  |\  \+ ++++++'-._
   });        
 </script>
     </a-scene>
+
 </body>
-</html> 
+
+</html>
